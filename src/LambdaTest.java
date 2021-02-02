@@ -1,8 +1,7 @@
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import static java.lang.Double.NaN;
-import static java.lang.Double.POSITIVE_INFINITY;
+import static java.lang.Double.*;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -15,7 +14,9 @@ public class LambdaTest {
                 {-1.0, 10.0, 10.0},
                 {0.0, 0.0, 0.0},
                 {-10.0, NaN, NaN},
-                {POSITIVE_INFINITY, 1e32, POSITIVE_INFINITY}
+                {POSITIVE_INFINITY, 1e32, POSITIVE_INFINITY},
+                {-2.1, -200.2, -2.1},
+                {NEGATIVE_INFINITY, -200.2, -200.2}
                 // TODO add 2 more test data here
         };
     }
@@ -25,7 +26,9 @@ public class LambdaTest {
         return new Object[][]{
                 {25.0, 5.0},
                 {-1.0, NaN},
-                {POSITIVE_INFINITY, POSITIVE_INFINITY}
+                {POSITIVE_INFINITY, POSITIVE_INFINITY},
+                {625.0, 25.0},
+                {-3.0, NaN}
                 // TODO add 2 more test data here
         };
     }
